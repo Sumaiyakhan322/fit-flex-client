@@ -89,7 +89,7 @@ const Navbar = () => {
            {navLinks}
             </ul>
           </div>
-       <Link to={'/'}> <span className="cursor-pointer text-4xl text-[#c3bd2e] flex">WebBazaar</span></Link>  
+       <Link to={'/'}> <span className="cursor-pointer text-4xl text-[#c3bd2e] flex">Fit-Flex-Online</span></Link>  
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 font-bold text-base space-x-2 text-white ">

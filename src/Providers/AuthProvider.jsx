@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import app from "../Firebase/firebase_config";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
-import useAxiosPublic from "../Hooks/useAxiosPublic";
+// import useAxiosPublic from "../Hooks/useAxiosPublic";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -12,7 +12,7 @@ const auth=getAuth(app)
 
 const AuthProvider = ({children}) => {
     const provider = new GoogleAuthProvider();
-    const axiosPublic=useAxiosPublic();
+    // const axiosPublic=useAxiosPublic();
 
     const [user,setUser]=useState(null);
     const [loading,setLoading]=useState(null);
@@ -60,7 +60,7 @@ const AuthProvider = ({children}) => {
        return ()=>{
            unsubscribe()
         }
-         },[axiosPublic])
+         },[user])
          const authInfo={user,loading,createUser,signIn,logout,googleSignIn}
     return (
         <AuthContext.Provider value={authInfo}>

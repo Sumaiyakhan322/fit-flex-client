@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import Register from "../Pages/Register/Register";
 import TrainerPage from "../Pages/Trainer/TrainerPage";
 import Login from "../Pages/Login/Login";
+import Classes from "../Pages/Classes/Classes";
 
   
     const router = createBrowserRouter([
@@ -24,6 +25,9 @@ import Login from "../Pages/Login/Login";
             {
               path:'/trainer',
               element:<TrainerPage></TrainerPage>
+            },{
+              path:'/classes',
+              element:<Classes></Classes>
             }
           ]
         },
