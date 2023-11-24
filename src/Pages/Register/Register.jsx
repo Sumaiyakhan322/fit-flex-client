@@ -36,9 +36,9 @@ const Register = () => {
             })
               .then()
               .catch()
-              const userInfo={name,email,role:'admin'}
+              const userInfo={name,email,role:'member'}
               console.log(userInfo);
-              axiosPublic.post('/admin',userInfo)
+              axiosPublic.post('/users',userInfo)
             .then(res=>{
               if(res.data.insertedId){
                 Swal.fire({
