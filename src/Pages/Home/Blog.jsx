@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useState } from "react";
+import Title from "../../Shared/Title";
 
 const Blog = () => {
   const axiosPublic = useAxiosPublic();
@@ -26,6 +27,7 @@ const Blog = () => {
   return (
     <>
       <div>
+        <Title heading={'Our blog'}></Title>
         {data?.map((items, index) => (
           <div key={items._id} className="mb-6 flex flex-wrap items-center">
             <div className="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">

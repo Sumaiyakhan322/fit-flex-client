@@ -3,6 +3,9 @@ import Banner from "./Banner";
 import Features from "./Features";
 import About from "./About";
 import Blog from "./Blog";
+import FeatureClass from "./FeatureClass";
+import Testimonial from "./Testimonial";
+import Newsletter from "./Newsletter";
 
 
 const Home = () => {
@@ -14,7 +17,10 @@ const Home = () => {
       <Banner></Banner>
       <Features></Features>
       <About></About>
+      <FeatureClass></FeatureClass>
+      <Testimonial></Testimonial>
       <Blog></Blog>
+      <Newsletter></Newsletter>
       
     </div>
   );
