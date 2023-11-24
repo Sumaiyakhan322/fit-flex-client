@@ -18,16 +18,16 @@ import { HelmetProvider } from "react-helmet-async";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
        <React.StrictMode>
-   {/* <AuthProvider> */}
+   <AuthProvider>
    <QueryClientProvider client={queryClient}>
       <HelmetProvider>
      <div className="max-w-screen-xl mx-auto">
-         <h2 className="text-black">HEloo</h2>
+        
         <RouterProvider router={router} />
        </div>
     </HelmetProvider>
       </QueryClientProvider>
-   {/* </AuthProvider> */}
+   </AuthProvider>
   </React.StrictMode>
   </>
 
