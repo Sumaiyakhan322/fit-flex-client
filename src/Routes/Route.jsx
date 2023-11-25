@@ -5,6 +5,8 @@ import Register from "../Pages/Register/Register";
 import TrainerPage from "../Pages/Trainer/TrainerPage";
 import Login from "../Pages/Login/Login";
 import Classes from "../Pages/Classes/Classes";
+import Gallery from "../Pages/Gallery/Gallery";
+import BeATrainer from "../Pages/Trainer/BeATrainer";
 
   
     const router = createBrowserRouter([
@@ -28,6 +30,13 @@ import Classes from "../Pages/Classes/Classes";
             },{
               path:'/classes',
               element:<Classes></Classes>
+            },{
+              path:'/gallery',
+              element:<Gallery></Gallery>
+
+            },{
+              path:'/beATrainer',
+              element:<BeATrainer></BeATrainer>
             }
           ]
         },
