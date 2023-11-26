@@ -7,6 +7,8 @@ import Login from "../Pages/Login/Login";
 import Classes from "../Pages/Classes/Classes";
 import Gallery from "../Pages/Gallery/Gallery";
 import BeATrainer from "../Pages/Trainer/BeATrainer";
+import Bookedpage from "../Pages/BookedPage/Bookedpage";
+import DetailedTrainer from "../Pages/Trainer/DetailedTrainer";
 
   
     const router = createBrowserRouter([
@@ -37,7 +39,15 @@ import BeATrainer from "../Pages/Trainer/BeATrainer";
             },{
               path:'/beATrainer',
               element:<BeATrainer></BeATrainer>
-            }
+            },{
+              path:'/booked/:email',
+              element:<Bookedpage></Bookedpage>,
+              loader:({params})=>`http://localhost:5000/trainers/${params.email}`
+             },{
+              path:'/detailTrainer/:email',
+              element:<DetailedTrainer></DetailedTrainer>,
+              loader:({params})=>`http://localhost:5000/trainers/${params.email}`
+             }
           ]
         },
       ]);
