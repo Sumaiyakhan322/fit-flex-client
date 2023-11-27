@@ -46,7 +46,11 @@ import DetailedTrainer from "../Pages/Trainer/DetailedTrainer";
              },{
               path:'/detailTrainer/:email',
               element:<DetailedTrainer></DetailedTrainer>,
-              loader:({params})=>`http://localhost:5000/trainers/${params.email}`
+              // loader:({params})=>fetch(`http://localhost:5000/trainers/${params.email}`)
+
+             
+              
+              
              }
           ]
         },

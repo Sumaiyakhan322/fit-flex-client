@@ -28,7 +28,7 @@ const onlyTrainer = data.filter((trainer) => trainer.role === "trainer");
       {onlyTrainer.map((items) => (
         <div
           key={items._id}
-          className="my-14 card card-side bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#335c70] "
+          className="my-14 card flex md:flex-row flex-col card-side bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#335c70] "
         >
           {/* <figure className="w-3/6 h-60 bg-center"><img src={items.image} alt="Movie"/></figure> */}
           <div
@@ -94,7 +94,7 @@ const onlyTrainer = data.filter((trainer) => trainer.role === "trainer");
             </ul>
 
             <div className="card-actions my-5">
-              <Link to={`/detailTrainer/${items?.email}`}>
+              <Link to={`/detailTrainer/${items.email}`} >
                 {" "}
                 <button className="    rounded text-[#193e51] bg-white  px-7 pb-2.5 pt-3 text-sm font-medium uppercase">
                   Know More
