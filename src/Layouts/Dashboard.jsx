@@ -31,27 +31,33 @@ const Dashboard = () => {
           </li>
           
           <li>
-            <NavLink to={"/dashboard/addItems"}>
+            <NavLink to={"/dashboard/subscribers"}>
               {" "}
-              Add items
+              All subscribers
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dashboard/manageItems"}>
+            <NavLink to={"/dashboard/allTrainers"}>
               {" "}
-             Manage items
+              All Trainers
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dashboard/manageBookings"}>
+            <NavLink to={"/dashboard/appliedTrainer"}>
               {" "}
-           Manage Bookings
+              Applied Trainer
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dashboard/allUsers"}>
+            <NavLink to={"/dashboard/balance"}>
               {" "}
-            All users
+              Balance
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/dashboard/addNewForum"}>
+              {" "}
+              Add new Forum
             </NavLink>
           </li>
          </> : 

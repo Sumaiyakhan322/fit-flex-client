@@ -28,6 +28,7 @@ const Newsletter = () => {
               });
             }
         })
+        e.reset();
   }
           
 

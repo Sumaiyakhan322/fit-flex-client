@@ -15,6 +15,8 @@ import Dashboard from "../Layouts/Dashboard";
 import UserHome from "../Pages/Dashboard/UserDashboard/UserHome";
 import TrainerHome from "../Pages/Dashboard/TrainerDashboard.jsx/TrainerHome";
 import AdminHome from "../Pages/Dashboard/AdminDashboard/AdminHome";
+import AllSubcribers from "../Pages/Dashboard/AdminDashboard/AllSubcribers";
+import AppliedTrainer from "../Pages/Dashboard/AdminDashboard/AppliedTrainer";
 
   
     const router = createBrowserRouter([
@@ -78,6 +80,12 @@ import AdminHome from "../Pages/Dashboard/AdminDashboard/AdminHome";
             {
               path:'adminHome',
               element:<AdminHome></AdminHome>
+            },{
+              path:'subscribers',
+              element:<AllSubcribers></AllSubcribers>
+            },{
+              path:'appliedTrainer',
+              element:<AppliedTrainer></AppliedTrainer>
             }
           ]
         }
