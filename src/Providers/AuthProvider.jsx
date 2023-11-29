@@ -13,6 +13,7 @@ const auth=getAuth(app)
 const AuthProvider = ({children}) => {
     const provider = new GoogleAuthProvider();
     // const axiosPublic=useAxiosPublic();
+   
 
     const [user,setUser]=useState(null);
     const [loading,setLoading]=useState(null);
@@ -39,22 +40,7 @@ const AuthProvider = ({children}) => {
            setUser(currentUser)
            setLoading(false)
            console.log(user);
-          //  if(currentUser){
-          //      //get token and store the token
-          //      const userInfo={email:currentUser?.email}
-          //      axiosPublic.post('/jwt',userInfo)
-          //      .then(res=>{
-          //        if(res.data.token){
-          //          localStorage.setItem('access-token',res.data.token)
-          //          setLoading(false)
-          //        }
-          //      })
-          //  }
-          //  else{
-          //     //remove token
-          //     localStorage.removeItem('access-token')
-          //     setLoading(false)
-          //  }
+          
           
         })
        return ()=>{

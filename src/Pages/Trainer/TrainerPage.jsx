@@ -4,11 +4,12 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Helmet } from "react-helmet-async";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../../Loading";
+import TimeStamp from "../../Components/TimeStamp";
 
 const TrainerPage = () => {
   const axiosPublic = useAxiosPublic();
-  
- const { data,isPending } = useQuery({
+
+  const { data, isPending } = useQuery({
     queryKey: ["trainers"],
     queryFn: async () => {
       const res = await axiosPublic.get("/trainers");
@@ -16,9 +17,9 @@ const TrainerPage = () => {
     },
   });
 
- if (isPending) return <Loading></Loading>
+  if (isPending) return <Loading></Loading>;
 
-const onlyTrainer = data.filter((trainer) => trainer.role === "trainer");
+  const onlyTrainer = data.filter((trainer) => trainer.role === "trainer");
   return (
     <div>
       <Helmet>
@@ -33,7 +34,7 @@ const onlyTrainer = data.filter((trainer) => trainer.role === "trainer");
           {/* <figure className="w-3/6 h-60 bg-center"><img src={items.image} alt="Movie"/></figure> */}
           <div
             style={{ backgroundImage: `url(${items.image})` }}
-            className="w-3/6  bg-cover bg-no-repeat "
+            className="w-3/6   bg-cover bg-no-repeat "
           ></div>
           <div className="card-body text-white">
             <h2 className="card-title font-semibold text-[#fcf540]">
@@ -46,12 +47,9 @@ const onlyTrainer = data.filter((trainer) => trainer.role === "trainer");
             <h2 className="card-title font-semibold text-[#fcf540]">
               Available Time Slot:
             </h2>
-            <div className="text-white">
+            <div className="text-white  font-bold flex flex-col">
               {items.selectedCheckboxes.map((item, index) => (
-                <h1 key={index}>
-                  <span className="mr-4">{index + 1}.</span>
-                  {item}
-                </h1>
+                <TimeStamp item={item} id={items._id} trainerDescritption={items}  key={index}></TimeStamp>
               ))}
             </div>
             <ul className="flex list-inside text-3xl mt-3">
@@ -94,7 +92,7 @@ const onlyTrainer = data.filter((trainer) => trainer.role === "trainer");
             </ul>
 
             <div className="card-actions my-5">
-              <Link to={`/detailTrainer/${items.email}`} >
+              <Link to={`/detailTrainer/${items?._id}`}>
                 {" "}
                 <button className="    rounded text-[#193e51] bg-white  px-7 pb-2.5 pt-3 text-sm font-medium uppercase">
                   Know More

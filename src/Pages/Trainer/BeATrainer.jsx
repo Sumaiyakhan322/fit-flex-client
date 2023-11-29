@@ -7,8 +7,8 @@ import Swal from "sweetalert2";
 const BeATrainer = () => {
   const { user } = useContext(AuthContext);
   const userEmail = user?.email;
-  const axiosPublic=useAxiosPublic();
-  
+  const axiosPublic = useAxiosPublic();
+
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
   const [skills, setSkills] = useState([]);
   const [weeks, setWeeks] = useState([]);
@@ -50,17 +50,27 @@ const BeATrainer = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
-    const age=event.target.age.value;
-    const email=userEmail;
-    const image=event.target.image.value;
-    const yearsOfExperience=event.target.year.value;
-    const experience=event.target.des.value
-    const trainerInfo={name,age,email,image,yearsOfExperience,experience,skills, selectedCheckboxes, weeks,role:"member"}
-    console.log(trainerInfo);
+    const age = event.target.age.value;
+    const email = userEmail;
+    const image = event.target.image.value;
+    const yearsOfExperience = event.target.year.value;
+    const experience = event.target.des.value;
+    const trainerInfo = {
+      name,
+      age,
+      email,
+      image,
+      yearsOfExperience,
+      experience,
+      skills,
+      selectedCheckboxes,
+      weeks,
+      role: "member",
+    };
+    
     //post on db
-     axiosPublic.post('/trainers',trainerInfo)
-     .then(res=>{
-      if(res.data.insertedId){
+    axiosPublic.post("/trainers", trainerInfo).then((res) => {
+      if (res.data.insertedId) {
         Swal.fire({
           position: "center",
           icon: "success",
@@ -69,11 +79,8 @@ const BeATrainer = () => {
           timer: 1500,
         });
       }
-  })
+    });
   };
-
-  
-
 
   return (
     <form onSubmit={handleSubmit}>
@@ -208,7 +215,7 @@ const BeATrainer = () => {
               checked={selectedCheckboxes.includes("6pm-7pm")}
               onChange={handleCheckboxChange}
             />
-           6pm-7pm
+            6pm-7pm
           </label>
           <label>
             <input

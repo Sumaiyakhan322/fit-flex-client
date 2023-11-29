@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import useAdmin from "../Hooks/useAdmin";
+import useTrainer from "../Hooks/useTrainer";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
+  const {isAdmin}=useAdmin();
+  const {isTrainer}=useTrainer()
   const handleSignOut = (e) => {
     e.preventDefault();
     logout().then().catch();
@@ -51,16 +55,7 @@ const Navbar = () => {
         </NavLink>
       </li>
 
-      <li className="hover:bg-[#aac7c7] rounded-lg nav">
-        <NavLink
-          to={`/dashboard`}
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#c3bd2e]" : ""
-          }
-        >
-          
-        </NavLink>
-      </li>
+    
       <li className="hover:bg-[#aac7c7] rounded-lg nav">
         <NavLink
           to={`/forums`}
@@ -70,6 +65,30 @@ const Navbar = () => {
         >
           Forums
         </NavLink>
+
+      </li>
+      <li  className="hover:bg-[#aac7c7] rounded-lg nav">
+      {user && isAdmin &&!isTrainer && (
+        <NavLink to={"/dashboard/adminHome"}  className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-[#c3bd2e]" : ""
+      }>
+          Dashboard
+        </NavLink>
+      )}
+      {user && !isAdmin && !isTrainer && (
+        <NavLink to={"/dashboard/userHome"}  className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-[#c3bd2e]" : ""
+      }>
+          Dashboard
+        </NavLink>
+      )}
+      {user && !isAdmin && isTrainer && (
+        <NavLink to={"/dashboard/trainerHome"}  className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-[#c3bd2e]" : ""
+      }>
+          Dashboard
+        </NavLink>
+      )}
       </li>
     </>
   );

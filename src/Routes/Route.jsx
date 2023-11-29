@@ -9,6 +9,12 @@ import Gallery from "../Pages/Gallery/Gallery";
 import BeATrainer from "../Pages/Trainer/BeATrainer";
 import Bookedpage from "../Pages/BookedPage/Bookedpage";
 import DetailedTrainer from "../Pages/Trainer/DetailedTrainer";
+import JoinNow from "../Pages/Trainer/JoinNow";
+import Private from "../Private/Private";
+import Dashboard from "../Layouts/Dashboard";
+import UserHome from "../Pages/Dashboard/UserDashboard/UserHome";
+import TrainerHome from "../Pages/Dashboard/TrainerDashboard.jsx/TrainerHome";
+import AdminHome from "../Pages/Dashboard/AdminDashboard/AdminHome";
 
   
     const router = createBrowserRouter([
@@ -38,22 +44,43 @@ import DetailedTrainer from "../Pages/Trainer/DetailedTrainer";
 
             },{
               path:'/beATrainer',
-              element:<BeATrainer></BeATrainer>
+              element:<Private><BeATrainer></BeATrainer></Private>
             },{
-              path:'/booked/:email',
-              element:<Bookedpage></Bookedpage>,
-              loader:({params})=>`http://localhost:5000/trainers/${params.email}`
-             },{
-              path:'/detailTrainer/:email',
+              path:'/detailTrainer/:id',
               element:<DetailedTrainer></DetailedTrainer>,
-              // loader:({params})=>fetch(`http://localhost:5000/trainers/${params.email}`)
+          },{
+            path:'/detailTrainer/joinNow/:id',
+            element:<Private><JoinNow></JoinNow></Private>
+          },{
+            path:'/bookedPage',
+            element:<Private><Bookedpage></Bookedpage></Private>
+          }
+          ],
+        },{
+          path:'dashboard',
+          element:<Dashboard></Dashboard>,
+          children:[
+            //users path
+            {
+              path:'userHome',
+              element:<UserHome></UserHome>
 
-             
-              
-              
-             }
+            },
+
+            //trainers paths
+            {
+              path:'trainerHome',
+              element:<TrainerHome></TrainerHome>
+            },
+            
+
+            //admin paths 
+            {
+              path:'adminHome',
+              element:<AdminHome></AdminHome>
+            }
           ]
-        },
+        }
       ]);
 
 
