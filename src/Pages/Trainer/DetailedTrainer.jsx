@@ -36,8 +36,7 @@ const DetailedTrainer = () => {
     skills,
     selectedCheckboxes,
     weeks,
-    _id,email
-  } = details;
+   } = details;
 
 
 

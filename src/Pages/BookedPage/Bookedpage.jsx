@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 const Bookedpage = () => {
     const {bookings}=useContext(ContextApi);
     const axiosPublic=useAxiosPublic()
-    console.log(Object.keys(bookings).join(","));
+    
     const {trainerName,trainerEmail,slotTime,packageName,price,memberEmail,memberName}=bookings
     console.log(packageName);
     const handleSubmit=(e)=>{

@@ -7,6 +7,7 @@ import useTrainer from "../Hooks/useTrainer";
 
 
 
+
 const Dashboard = () => {
  
    const {isAdmin}=useAdmin();
@@ -18,9 +19,10 @@ const Dashboard = () => {
    return (
 
 
-       <div className="flex">
-      <div className="w-64 bg-orange-400 min-h-screen">
-        <ul className="menu">
+       <div className="flex flex-col md:flex-row">
+       
+      <div className="md:w-64 bg-orange-400 md:min-h-screen ">
+        <ul className="menu flex flex-row md:flex-col">
          {isAdmin ? <>
          {/* Admin exits */}
           <li>
@@ -63,8 +65,9 @@ const Dashboard = () => {
          </> : 
          //trainer exist
          isTrainer ? <>
+         {/* Trainer route */}
          </> :
-        //  Admin does not exits
+                
          <>
 
          <li>
@@ -116,7 +119,7 @@ const Dashboard = () => {
         </ul>
       </div>
       {/* dashborad */}
-      <div className="flex-1 p-8">
+      <div className="flex-1 p-8 ">
         <Outlet></Outlet>
       </div>
     </div>

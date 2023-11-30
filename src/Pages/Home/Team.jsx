@@ -18,7 +18,7 @@ const Team = () => {
  if (isPending) return <Loading></Loading>
 
 
- const onlyTrainer = data.filter((trainer) => trainer.role === "trainer");
+ const onlyTrainer = data?.filter((trainer) => trainer.role === "trainer");
 
     
  

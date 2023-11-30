@@ -17,6 +17,9 @@ import TrainerHome from "../Pages/Dashboard/TrainerDashboard.jsx/TrainerHome";
 import AdminHome from "../Pages/Dashboard/AdminDashboard/AdminHome";
 import AllSubcribers from "../Pages/Dashboard/AdminDashboard/AllSubcribers";
 import AppliedTrainer from "../Pages/Dashboard/AdminDashboard/AppliedTrainer";
+import AllTrainers from "../Pages/Dashboard/AdminDashboard/AllTrainers";
+import TrainerPayment from "../Pages/Dashboard/AdminDashboard/TrainerPayment";
+import AdminBalance from "../Pages/Dashboard/AdminDashboard/AdminBalance";
 
   
     const router = createBrowserRouter([
@@ -86,6 +89,15 @@ import AppliedTrainer from "../Pages/Dashboard/AdminDashboard/AppliedTrainer";
             },{
               path:'appliedTrainer',
               element:<AppliedTrainer></AppliedTrainer>
+            },{
+              path:'allTrainers',
+              element:<AllTrainers></AllTrainers>
+            },{
+              path:'trainerPay/:id',
+              element:<TrainerPayment></TrainerPayment>
+            },{
+              path:'balance',
+              element:<AdminBalance></AdminBalance>
             }
           ]
         }
