@@ -110,22 +110,22 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dashboard/paymentHistory"}>
+            <NavLink to={"/dashboard/userActivity"}>
               {" "}
-              Payment History
+              Activity Log
             </NavLink>
           </li>
          
           <li>
-            <NavLink to={"/dashboard/review"}>
+            <NavLink to={"/dashboard/profileSetting"}>
               {" "}
-           Add review
+              Profile Settings
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dashboard/myBookings"}>
+            <NavLink to={"/dashboard/userClass"}>
               {" "}
-             My Bookings
+              Recommended Classes
             </NavLink>
           </li></>}
 

@@ -26,6 +26,9 @@ import TrainerManageMember from "../Pages/Dashboard/TrainerDashboard.jsx/Trainer
 import TrainerForum from "../Pages/Dashboard/TrainerDashboard.jsx/TrainerForum";
 import TrainerAddClass from "../Pages/Dashboard/TrainerDashboard.jsx/TrainerAddClass";
 import SendInstructions from "../Pages/Dashboard/TrainerDashboard.jsx/SendInstructions";
+import ProfileSetting from "../Pages/Dashboard/UserDashboard/ProfileSetting";
+import UserClass from "../Pages/Dashboard/UserDashboard/UserClass";
+import UserDailyActivity from "../Pages/Dashboard/UserDashboard/UserDailyActivity";
 
   
     const router = createBrowserRouter([
@@ -75,14 +78,19 @@ import SendInstructions from "../Pages/Dashboard/TrainerDashboard.jsx/SendInstru
             {
               path:'userHome',
               element:<UserHome></UserHome>
-
             },
-
-            //trainers paths
             {
-              path:'trainerHome',
-              element:<TrainerHome></TrainerHome>
+              path:'profileSetting',
+              element:<ProfileSetting></ProfileSetting>
+            },{
+              path:'userClass',
+              element:<UserClass></UserClass>
+            },{
+              path:'userActivity',
+              element:<UserDailyActivity></UserDailyActivity>
             },
+
+            
             
 
             //admin paths 

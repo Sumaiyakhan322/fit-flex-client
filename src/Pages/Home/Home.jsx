@@ -23,6 +23,9 @@ const Home = () => {
       <Blog></Blog>
       <Newsletter></Newsletter>
       <Team></Team>
+     
+
+      
       
     </div>
   );

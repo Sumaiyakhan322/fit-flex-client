@@ -19,7 +19,7 @@ const TrainerAddClass = () => {
         const day=e.target.day.value ;
         const timeSlot=e.target.timeSlot.value ;
         const classInfo={trainerName,classDescription,className,image,day,timeSlot}
-        console.log(classInfo);
+        
         axiosPublic.post('/classess',classInfo).then((res) => {
             if (res.data.insertedId) {
               Swal.fire({
@@ -32,11 +32,7 @@ const TrainerAddClass = () => {
               e.target.reset()
             }
           });
-        
-
-
-       
-    }
+ }
         
   return (
     <div>

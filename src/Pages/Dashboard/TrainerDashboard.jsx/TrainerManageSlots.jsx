@@ -94,7 +94,7 @@ const TrainerManageSlots = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {allBookedSlots?.map((slot) => (
               <div key={slot._id}>
-                <div className="card bg-[hsla(0,0%,100%,0)] px-2 py-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#14665488] dark:shadow-black/20 text-primary-content backdrop-blur-[30px]">
+                <div className="card bg-[hsla(0,0%,100%,0)] px-2 py-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#1466548a] dark:shadow-black/20 text-primary-content backdrop-blur-[30px]">
                   <div className="card-body">
                     <h2 className="card-title text-[#193e51] font-bold text-xl">My Slot Time:<span className="text-[#eee95c]">{slot.slotTime}</span></h2>
                     <h2 className="card-title text-[#193e51] font-bold text-xl">Member Email:<span className="text-[#eee95c]">{slot.memberEmail}</span></h2>

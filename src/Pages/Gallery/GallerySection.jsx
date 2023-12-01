@@ -1,48 +1,62 @@
-import  { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import Loading from "../../Loading";
+import GalleryCard from "../../Components/GalleryCard";
+import { useRef } from "react";
+import useLazyLoad from "../../Js/LazyLoading";
+import clsx from "clsx";
+import LoadingGallery from "../../Components/LoadingGallery";
+import '../../Styles/galleryDesign.css'
+
 
 const GallerySection = () => {
-   
-    const [images, setImages] = useState([]);
-    const [totalImages, setTotalImages] = useState(0);
-    const [loadedImages, setLoadedImages] = useState(12);
+  const axiosPublic=useAxiosPublic();
+const NUM_PER_PAGE = 12;
+const TOTAL_PAGES = 5;
   
-    useEffect(() => {
-      // Fetch images from your API or database
-      // You can replace this with your actual API endpoint
-      fetch('http://localhost:5000/gallery')
-        .then((response) => response.json())
-        .then((data) => {
-           
-          setImages(data[0].allImages);
-          setTotalImages(data[0].totalImages);
-          console.log('Fetched data:', data);
-        });
-    }, []);
-  
-    // Function to load more images
-    const loadMoreImages = () => {
-      setLoadedImages((prevLoadedImages) => prevLoadedImages + 12);
-    };
-  
-    return (
-        <div>
-        <h1>Image Gallery</h1>
-        <div className="image-grid">
-          {images?.slice(0, loadedImages).map((image) => (
-            <Link to={`/image/${image.imgNumber}`} key={image.imgNumber}>
-              <img
-                src={image.image}
-                alt={`Image ${image.imgNumber}`}
-                className="image"
-              />
-            </Link>
-          ))}
+    const { data:images, isPending } = useQuery({
+        queryKey: ["gallery"],
+        queryFn: async () => {
+          const res = await axiosPublic.get("/gallery");
+          return res.data;
+        },
+      });
+    
+      // if (isPending ) return <Loading></Loading>;
+      const triggerRef = useRef(null);
+      const onGrabData = (currentPage) => {
+          // This would be where you'll call your API
+          return new Promise((resolve) => {
+          setTimeout(() => {
+              const data = images.slice(
+              ((currentPage - 1)%TOTAL_PAGES) * NUM_PER_PAGE,
+              NUM_PER_PAGE * (currentPage%TOTAL_PAGES)
+              );
+              console.log(data);
+              resolve(data);
+          }, 300);
+          });
+      };
+      const { data, loading } = useLazyLoad({ triggerRef, onGrabData });
+      if(isPending)<Loading></Loading>
+      
+
+  return (
+    <div className=" mt-32">
+     
+      <div className=" grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-10  ">
+            {
+                data?.map((items,index)=>(
+                    <GalleryCard className={clsx("fade-in", { visible: loading, delay: index * 0.1 })} key={items._id} items={items.image}></GalleryCard> 
+                ))
+            }
+          
         </div>
-        {loadedImages < totalImages && (
-          <button onClick={loadMoreImages}>Load More</button>
-        )}
-      </div>
-    );
-  };
+        <div ref={triggerRef} className={clsx("trigger", { visible: loading })}>
+            <LoadingGallery></LoadingGallery>
+        </div>
+    </div>
+  );
+};
+
 export default GallerySection;
