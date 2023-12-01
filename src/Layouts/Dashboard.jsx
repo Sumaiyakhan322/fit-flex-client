@@ -66,6 +66,39 @@ const Dashboard = () => {
          //trainer exist
          isTrainer ? <>
          {/* Trainer route */}
+         <li>
+            <NavLink to={"/dashboard/trainerHome"}>
+              {" "}
+              Trainer Home
+            </NavLink>
+          </li>
+         <li>
+            <NavLink to={"/dashboard/manageSlots"}>
+              {" "}
+              Manage Slots
+            </NavLink>
+          </li>
+         <li>
+            <NavLink to={"/dashboard/manageMember"}>
+              {" "}
+              Manage member
+            </NavLink>
+          </li>
+         <li>
+            <NavLink to={"/dashboard/trainerForum"}>
+              {" "}
+             Add a forum
+            </NavLink>
+          </li>
+         <li>
+            <NavLink to={"/dashboard/addClass"}>
+              {" "}
+              Add new Class
+            </NavLink>
+          </li>
+         
+         
+
          </> :
                 
          <>

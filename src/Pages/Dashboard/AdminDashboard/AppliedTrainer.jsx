@@ -5,10 +5,12 @@ import Loading from "../../../Loading";
 import { FaRegEye } from "react-icons/fa";
 import Swal from "sweetalert2";
 import emailjs from '@emailjs/browser';
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 emailjs.init("ZYlfDB9H57G6wKORU");
 const AppliedTrainer = () => {
   const axiosPublic = useAxiosPublic();
-
+  const {user}=useContext(AuthContext)
   const { data, isPending,refetch } = useQuery({
     queryKey: ["trainers"],
     queryFn: async () => {
@@ -71,7 +73,7 @@ const AppliedTrainer = () => {
   
         const templateParams = {
           to_name: `${item.email}`,
-          from_name: `${item.name}`,
+          from_name: `${user?.email}`,
           // Add any other parameters you want to include in your email
         };
   

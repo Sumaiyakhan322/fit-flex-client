@@ -20,6 +20,12 @@ import AppliedTrainer from "../Pages/Dashboard/AdminDashboard/AppliedTrainer";
 import AllTrainers from "../Pages/Dashboard/AdminDashboard/AllTrainers";
 import TrainerPayment from "../Pages/Dashboard/AdminDashboard/TrainerPayment";
 import AdminBalance from "../Pages/Dashboard/AdminDashboard/AdminBalance";
+import AdminForum from "../Pages/Dashboard/AdminDashboard/AdminForum";
+import TrainerManageSlots from "../Pages/Dashboard/TrainerDashboard.jsx/TrainerManageSlots";
+import TrainerManageMember from "../Pages/Dashboard/TrainerDashboard.jsx/TrainerManageMember";
+import TrainerForum from "../Pages/Dashboard/TrainerDashboard.jsx/TrainerForum";
+import TrainerAddClass from "../Pages/Dashboard/TrainerDashboard.jsx/TrainerAddClass";
+import SendInstructions from "../Pages/Dashboard/TrainerDashboard.jsx/SendInstructions";
 
   
     const router = createBrowserRouter([
@@ -98,6 +104,29 @@ import AdminBalance from "../Pages/Dashboard/AdminDashboard/AdminBalance";
             },{
               path:'balance',
               element:<AdminBalance></AdminBalance>
+            },{
+              path:'addNewForum',
+              element:<AdminForum></AdminForum>,
+            },
+            //trainer paths
+            {
+             path:'trainerHome',
+             element:<TrainerHome></TrainerHome>
+            },{
+              path:'manageSlots',
+              element:<TrainerManageSlots></TrainerManageSlots>
+            },{
+              path:'manageMember',
+              element:<TrainerManageMember></TrainerManageMember>
+            },{
+              path:'trainerForum',
+              element:<TrainerForum></TrainerForum>
+            },{
+              path:'addClass',
+              element:<TrainerAddClass></TrainerAddClass>
+            },{
+              path:'manageMember/sendInstructions/:id',
+              element:<SendInstructions></SendInstructions>
             }
           ]
         }

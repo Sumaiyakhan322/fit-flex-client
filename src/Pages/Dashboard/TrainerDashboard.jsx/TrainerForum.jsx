@@ -1,17 +1,16 @@
 import Swal from "sweetalert2";
-import Title from "../../../Shared/Title";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import Title from "../../../Shared/Title";
 
 
-
-const AdminForum = () => {
+const TrainerForum = () => {
     const axiosPublic=useAxiosPublic()
     const handleSubmit=(e)=>{
         e.preventDefault();
         const title=e.target.title.value;
         const des=e.target.des.value;
         const img=e.target.image.value;
-        const role='admin';
+        const role='trainer';
         const date=new Date();
         const forumDetails={title,des,img,role,date};
           //post on db
@@ -28,12 +27,9 @@ const AdminForum = () => {
         }
       });
     };
-
-        
- 
     return (
-      
         <div>
+            <div>
                 <div>
             <Title heading={'Add Forum'}></Title>
                <form onSubmit={handleSubmit}>
@@ -93,8 +89,9 @@ const AdminForum = () => {
     </form>
         </div>
             
+        </div> 
         </div>
-    )
+    );
 };
 
-export default AdminForum;
+export default TrainerForum;

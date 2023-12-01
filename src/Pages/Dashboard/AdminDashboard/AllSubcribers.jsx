@@ -8,7 +8,7 @@ const AllSubcribers = () => {
     const axiosPublic=useAxiosPublic();
    
   const { data, isPending } = useQuery({
-    queryKey: ["trainers"],
+    queryKey: ["newsLetter"],
     queryFn: async () => {
       const res = await axiosPublic.get("/newsLetter");
       return res.data;

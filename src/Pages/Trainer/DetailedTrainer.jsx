@@ -20,9 +20,7 @@ const DetailedTrainer = () => {
       const res = await axiosPublic.get(`/trainers/${id}`);
       
       setDetails(res.data);
-      
-     
-    },
+   },
   });
  
   if (isPending) return <Loading></Loading>;
