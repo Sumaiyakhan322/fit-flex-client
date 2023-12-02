@@ -32,6 +32,8 @@ import UserDailyActivity from "../Pages/Dashboard/UserDashboard/UserDailyActivit
 import Forums from "../Pages/Forums/Forums";
 import DetailsClass from "../Pages/Classes/DetailsClass";
 import Error from "../Error/Error";
+import Admin from "./Admin";
+import Trainer from "./Trainer";
 
   
     const router = createBrowserRouter([
@@ -82,7 +84,7 @@ import Error from "../Error/Error";
           ],
         },{
           path:'dashboard',
-          element:<Dashboard></Dashboard>,
+          element:<Private><Dashboard></Dashboard></Private>,
           children:[
             //users path
             {
@@ -106,30 +108,30 @@ import Error from "../Error/Error";
             //admin paths 
             {
               path:'adminHome',
-              element:<AdminHome></AdminHome>
+              element:<Admin><AdminHome></AdminHome></Admin>
             },{
               path:'subscribers',
-              element:<AllSubcribers></AllSubcribers>
+              element:<Admin><AllSubcribers></AllSubcribers></Admin>
             },{
               path:'appliedTrainer',
-              element:<AppliedTrainer></AppliedTrainer>
+              element:<Admin><AppliedTrainer></AppliedTrainer></Admin>
             },{
               path:'allTrainers',
-              element:<AllTrainers></AllTrainers>
+              element:<Admin><AllTrainers></AllTrainers></Admin>
             },{
               path:'trainerPay/:id',
-              element:<TrainerPayment></TrainerPayment>
+              element:<Admin><TrainerPayment></TrainerPayment></Admin>
             },{
               path:'balance',
-              element:<AdminBalance></AdminBalance>
+              element:<Admin><AdminBalance></AdminBalance></Admin>
             },{
               path:'addNewForum',
-              element:<AdminForum></AdminForum>,
+              element:<Admin><AdminForum></AdminForum></Admin>,
             },
             //trainer paths
             {
              path:'trainerHome',
-             element:<TrainerHome></TrainerHome>
+             element:<Trainer><TrainerHome></TrainerHome></Trainer>
             },{
               path:'manageSlots',
               element:<TrainerManageSlots></TrainerManageSlots>

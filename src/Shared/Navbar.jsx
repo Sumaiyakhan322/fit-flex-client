@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import useAdmin from "../Hooks/useAdmin";
 import useTrainer from "../Hooks/useTrainer";
+import { CgGym } from "react-icons/cg";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -122,9 +123,9 @@ const Navbar = () => {
               </ul>
             </div>
             <Link to={"/"}>
-              {" "}
-              <span className="cursor-pointer text-4xl text-[#c3bd2e] flex">
-                Fit-Flex-Online
+              {" "} 
+              <span className="cursor-pointer text-4xl text-[#c3bd2e] flex items-center ">
+             <span className="ml-2"><CgGym /></span> <span> Fit-Flex-Online</span> 
               </span>
             </Link>
           </div>

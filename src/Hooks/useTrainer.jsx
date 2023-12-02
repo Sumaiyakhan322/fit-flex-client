@@ -10,7 +10,7 @@ const useTrainer = () => {
     const axiosPublic=useAxiosPublic()
     const {user,loading}=useContext(AuthContext)
    
-      let isTrainer=false
+    let isTrainer=false
     const {data,isPending} =useQuery({
         queryKey:[user?.email,'trainers'],
         enabled:!loading,
@@ -22,15 +22,17 @@ const useTrainer = () => {
     if(isPending) return <Loading></Loading>
 
   
+ if(loading) {
+  const isTrainerExist= (data?.find(trainer=>trainer.email===user?.email))
 
- const isTrainerExist= (data?.find(trainer=>trainer.email===user?.email))
 
-
- const role=isTrainerExist?.role==='trainer';
-
- if(role){
-          isTrainer=true
-        }
+  const role=isTrainerExist?.role==='trainer';
+ 
+  if(role){
+           isTrainer=true
+   }
+ 
+ } 
 
 
 
@@ -40,7 +42,7 @@ const useTrainer = () => {
     
 
  
- return {isTrainer}
+ return {isTrainer,isPending}
 };
 
 export default useTrainer;

@@ -14,7 +14,7 @@ const useAdmin = () => {
  
      const {data,isPending} =useQuery({
          queryKey:[user?.email,'isAdmin'],
-         enabled:!loading,
+        //  enabled:!loading,
          queryFn:async ()=>{
             const res=await axiosPublic.get(`/admin`)
              return res.data;
@@ -22,7 +22,7 @@ const useAdmin = () => {
      })
      if(isPending) return <Loading></Loading>
  
-     if (data && data.length > 0) {
+     if (data && data.length > 0 && loading==true) {
        
         const admin = data[0].email === userEmail;
         if (admin) {
@@ -30,7 +30,7 @@ const useAdmin = () => {
         }
        
       }
-      return { isAdmin}
+      return { isAdmin,isPending}
     }
 
    

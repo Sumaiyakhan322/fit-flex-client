@@ -5,18 +5,19 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import { useState } from "react";
 import { useEffect } from "react";
 
-
-export const AuthContext=createContext(null)
+const provider = new GoogleAuthProvider();
 
 const auth=getAuth(app)
 
+export const AuthContext=createContext(null)
+
 const AuthProvider = ({children}) => {
-    const provider = new GoogleAuthProvider();
+   
     // const axiosPublic=useAxiosPublic();
    
 
     const [user,setUser]=useState(null);
-    const [loading,setLoading]=useState(null);
+    const [loading,setLoading]=useState(true);
     const createUser=(email, password)=>{
         setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
@@ -35,18 +36,18 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return signOut(auth)
     }
-    useEffect(()=>{
-        const unsubscribe=onAuthStateChanged(auth,currentUser=>{
-           setUser(currentUser)
-           setLoading(false)
-           console.log(user);
-          
-          
-        })
-       return ()=>{
-           unsubscribe()
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            
+            setUser(currentUser);
+            console.log('current user', currentUser);
+            setLoading(false);
+        });
+        return () => {
+            return unsubscribe();
         }
-         },[user])
+    }, [])
+    
          const authInfo={user,loading,createUser,signIn,logout,googleSignIn}
     return (
         <AuthContext.Provider value={authInfo}>

@@ -1,5 +1,5 @@
 
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
 import useTrainer from "../Hooks/useTrainer";
 
@@ -21,43 +21,63 @@ const Dashboard = () => {
 
        <div className="flex flex-col md:flex-row">
        
-      <div className="md:w-64 bg-orange-400 md:min-h-screen ">
-        <ul className="menu flex flex-row md:flex-col">
+      <div className="md:w-64 bg-[#193e51] md:min-h-screen ">
+        <ul className="menu flex flex-row md:flex-col text-white">
+          <li>
+          <Link to={"/"}>
+              {" "}
+              <span className="cursor-pointer text-3xl text-yellow-300 flex">
+                Fit-Flex-Online
+              </span>
+            </Link>
+          </li>
          {isAdmin ? <>
          {/* Admin exits */}
           <li>
-            <NavLink to={"/dashboard/adminHome"}>
+            <NavLink to={"/dashboard/adminHome"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      } >
               
               Admin Home
             </NavLink>
           </li>
           
           <li>
-            <NavLink to={"/dashboard/subscribers"}>
+            <NavLink to={"/dashboard/subscribers"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               All subscribers
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dashboard/allTrainers"}>
+            <NavLink to={"/dashboard/allTrainers"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               All Trainers
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dashboard/appliedTrainer"}>
+            <NavLink to={"/dashboard/appliedTrainer"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               Applied Trainer
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dashboard/balance"}>
+            <NavLink to={"/dashboard/balance"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               Balance
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dashboard/addNewForum"}>
+            <NavLink to={"/dashboard/addNewForum"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               Add new Forum
             </NavLink>
@@ -67,31 +87,41 @@ const Dashboard = () => {
          isTrainer ? <>
          {/* Trainer route */}
          <li>
-            <NavLink to={"/dashboard/trainerHome"}>
+            <NavLink to={"/dashboard/trainerHome"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               Trainer Home
             </NavLink>
           </li>
          <li>
-            <NavLink to={"/dashboard/manageSlots"}>
+            <NavLink to={"/dashboard/manageSlots"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               Manage Slots
             </NavLink>
           </li>
          <li>
-            <NavLink to={"/dashboard/manageMember"}>
+            <NavLink to={"/dashboard/manageMember"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               Manage member
             </NavLink>
           </li>
          <li>
-            <NavLink to={"/dashboard/trainerForum"}>
+            <NavLink to={"/dashboard/trainerForum"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
              Add a forum
             </NavLink>
           </li>
          <li>
-            <NavLink to={"/dashboard/addClass"}>
+            <NavLink to={"/dashboard/addClass"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               Add new Class
             </NavLink>
@@ -104,26 +134,34 @@ const Dashboard = () => {
          <>
 
          <li>
-            <NavLink to={"/dashboard/userHome"}>
+            <NavLink to={"/dashboard/userHome"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               
               User Home
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dashboard/userActivity"}>
+            <NavLink to={"/dashboard/userActivity"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               Activity Log
             </NavLink>
           </li>
          
           <li>
-            <NavLink to={"/dashboard/profileSetting"}>
+            <NavLink to={"/dashboard/profileSetting"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               Profile Settings
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/dashboard/userClass"}>
+            <NavLink to={"/dashboard/userClass"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
               Recommended Classes
             </NavLink>
@@ -132,21 +170,27 @@ const Dashboard = () => {
           {/* common links */}
           <div className="divider"></div>
           <li>
-            <NavLink to={"/"}>
+            <NavLink to={"/"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
             Home
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/order/salad"}>
+            <NavLink to={"/classes"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
-             Order
+             Classes
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/order/salad"}>
+            <NavLink to={"/trainer"} className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "text-yellow-300" : ""
+      }>
               {" "}
-            Contact
+            Trainer
             </NavLink>
           </li>
         </ul>
