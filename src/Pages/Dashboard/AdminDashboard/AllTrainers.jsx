@@ -3,6 +3,7 @@ import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Loading from "../../../Loading";
 import Title from "../../../Shared/Title";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const AllTrainers = () => {
   const axiosPublic = useAxiosPublic();
@@ -22,6 +23,9 @@ const AllTrainers = () => {
 
   return (
     <div className="w-full">
+       <Helmet>
+        <title> Fit-Flex-Online|All Trainers </title>
+      </Helmet>
       <Title heading={"All Trainers"}></Title>
       <div className="overflow-x-auto md:overflow-hidden">
         <table className="table table-xs">

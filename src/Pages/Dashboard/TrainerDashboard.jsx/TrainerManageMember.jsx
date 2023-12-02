@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { IoMdMail } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const TrainerManageMember = () => {
@@ -25,10 +26,12 @@ const TrainerManageMember = () => {
       const allBookedSlots = bookedSlots?.filter(
         (book) => book.trainerEmail === user?.email
       );
-      console.log(allBookedSlots);
-
+   
     return (
         <div>
+           <Helmet>
+        <title> Fit-Flex-Online|Manage Member</title>
+      </Helmet>
             <Title heading={'Manage Member'}></Title>
             <div className="w-full">
      

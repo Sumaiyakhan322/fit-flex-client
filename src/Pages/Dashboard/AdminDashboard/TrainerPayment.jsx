@@ -4,6 +4,7 @@ import Loading from "../../../Loading";
 import { useNavigate, useParams } from "react-router-dom";
 import Title from "../../../Shared/Title";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const TrainerPayment = () => {
@@ -64,6 +65,9 @@ const TrainerPayment = () => {
 
     return (
         <div>
+          <Helmet>
+        <title> Fit-Flex-Online|Admin-Trainer-Payment-page</title>
+      </Helmet>
             <Title heading={'Trainer Payment page'}></Title>
                <form onSubmit={handleSubmit}>
       <div className="flex gap-4 md:flex-row flex-col">

@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Loading from "../../../Loading";
 import Title from "../../../Shared/Title";
+import { Helmet } from "react-helmet-async";
 
 
 const AllSubcribers = () => {
@@ -20,6 +21,9 @@ const AllSubcribers = () => {
 
     return (
         <div>
+          <Helmet>
+        <title> Fit-Flex-Online| All subscribers</title>
+      </Helmet>
           <Title heading={' All subscribers'}></Title>
           <div className="overflow-x-auto md:ml-20 ml-0">
   <table className="table ">

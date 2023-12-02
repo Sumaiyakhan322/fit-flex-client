@@ -4,6 +4,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Loading from "../../../Loading";
+import { Helmet } from "react-helmet-async";
 
 
 const UserDailyActivity = () => {
@@ -21,10 +22,13 @@ const UserDailyActivity = () => {
      const  myBooked = myClass?.find(
         (bookedItem) => bookedItem.memberEmail === user?.email
       );
-console.log(myBooked);
+
 
     return (
         <div>
+          <Helmet>
+        <title> Fit-Flex-Online|Daily Activity</title>
+      </Helmet>
             <Title heading={'My Daily Activity '}></Title>
             <ol className="relative border-s border-gray-200 dark:border-gray-700">
   <li className="mb-10 ms-4">

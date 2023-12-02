@@ -29,12 +29,16 @@ import SendInstructions from "../Pages/Dashboard/TrainerDashboard.jsx/SendInstru
 import ProfileSetting from "../Pages/Dashboard/UserDashboard/ProfileSetting";
 import UserClass from "../Pages/Dashboard/UserDashboard/UserClass";
 import UserDailyActivity from "../Pages/Dashboard/UserDashboard/UserDailyActivity";
+import Forums from "../Pages/Forums/Forums";
+import DetailsClass from "../Pages/Classes/DetailsClass";
+import Error from "../Error/Error";
 
   
     const router = createBrowserRouter([
         {
           path: "/",
           element:<Main></Main>,
+          errorElement:<Error></Error>,
           children:[
             {
                 path:'/',
@@ -53,6 +57,9 @@ import UserDailyActivity from "../Pages/Dashboard/UserDashboard/UserDailyActivit
               path:'/classes',
               element:<Classes></Classes>
             },{
+              path:'/classes/:id',
+              element:<DetailsClass></DetailsClass>
+            },{
               path:'/gallery',
               element:<Gallery></Gallery>
 
@@ -68,6 +75,9 @@ import UserDailyActivity from "../Pages/Dashboard/UserDashboard/UserDailyActivit
           },{
             path:'/bookedPage',
             element:<Private><Bookedpage></Bookedpage></Private>
+          },{
+            path:'/forums',
+            element:<Forums></Forums>
           }
           ],
         },{

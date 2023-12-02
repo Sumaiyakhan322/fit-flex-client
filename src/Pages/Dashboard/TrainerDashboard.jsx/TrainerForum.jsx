@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Title from "../../../Shared/Title";
+import { Helmet } from "react-helmet-async";
 
 
 const TrainerForum = () => {
@@ -29,6 +30,9 @@ const TrainerForum = () => {
     };
     return (
         <div>
+           <Helmet>
+        <title> Fit-Flex-Online|Forum </title>
+      </Helmet>
             <div>
                 <div>
             <Title heading={'Add Forum'}></Title>

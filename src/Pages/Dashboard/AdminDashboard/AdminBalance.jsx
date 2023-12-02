@@ -3,6 +3,7 @@ import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Loading from "../../../Loading";
 import Title from "../../../Shared/Title";
 import PieChat from "../../../Components/PieChat";
+import { Helmet } from "react-helmet-async";
 
 
 const AdminBalance = () => {
@@ -49,6 +50,9 @@ const AdminBalance = () => {
   return (
     <div className="">
         <div className="">
+        <Helmet>
+        <title> Fit-Flex-Online|Admin-Balance </title>
+      </Helmet>
        <div className="">
        <Title heading={'Statistic'}></Title>
       <div className="stats shadow flex flex-col gap-10 md:flex-row mb-36">

@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 emailjs.init("ZYlfDB9H57G6wKORU");
 const TrainerManageSlots = () => {
   const axiosPublic = useAxiosPublic();
@@ -57,6 +58,9 @@ const TrainerManageSlots = () => {
 
   return (
     <div>
+       <Helmet>
+        <title> Fit-Flex-Online|Manage Slots </title>
+      </Helmet>
       <Title heading={"Manage Slots"}></Title>
 
       <div className="px-6 py-12 text-center md:px-12 lg:text-left ">

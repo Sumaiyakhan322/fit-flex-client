@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import Title from "../../../Shared/Title";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -35,6 +36,9 @@ const AdminForum = () => {
       
         <div>
                 <div>
+                <Helmet>
+        <title> Fit-Flex-Online|Admin-Forum </title>
+      </Helmet>
             <Title heading={'Add Forum'}></Title>
                <form onSubmit={handleSubmit}>
       <div className="flex gap-4 md:flex-row flex-col">

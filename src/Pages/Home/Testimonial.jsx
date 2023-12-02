@@ -2,8 +2,24 @@ import testimonial1 from '../../assets/testimonail/man1.jpg'
 import testimonial2 from '../../assets/testimonail/img2.avif'
 import testimonial3 from '../../assets/testimonail/img3.jpg'
 import Title from '../../Shared/Title';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
+
+import Loading from '../../Loading';
+import { useQuery } from '@tanstack/react-query';
 
 const Testimonial = () => {
+
+  const axiosPublic=useAxiosPublic();
+ 
+  const { data: bookedSlots, isPending: bookedPending } = useQuery({
+      queryKey: ["booked"],
+      queryFn: async () => {
+        const res = await axiosPublic.get("/confirmBooked");
+        return res.data;
+      },
+    });
+  
+    if ( bookedPending) return <Loading></Loading>;
     return (
         <div>
         <section className="mb-32 text-center">
@@ -28,7 +44,7 @@ const Testimonial = () => {
                     </svg>
                   </div>
                   <div className="p-6">
-                    <h5 className="mb-2 md:text-2xl text-lg font-bold">Halley Frank</h5>
+                    <h5 className="mb-2 md:text-2xl text-lg font-bold">{bookedSlots[0].memberName}</h5>
                     <h6 className="mb-4 font-medium text-[#c3bd2e] ">
                       Marketing Specialist
                     </h6>
@@ -89,7 +105,7 @@ const Testimonial = () => {
                     </svg>
                   </div>
                   <div className="p-6">
-                    <h5 className="mb-2 md:text-2xl text-lg font-bold">Halley Frank</h5>
+                    <h5 className="mb-2 md:text-2xl text-lg font-bold">{bookedSlots[2].memberName}</h5>
                     <h6 className="mb-4 font-medium text-[#c3bd2e] ">
                       Marketing Specialist
                     </h6>
@@ -156,7 +172,7 @@ const Testimonial = () => {
                     </svg>
                   </div>
                   <div className="p-6">
-                    <h5 className="mb-2 md:text-2xl text-lg font-bold">Lisa Trey</h5>
+                    <h5 className="mb-2 md:text-2xl text-lg font-bold">{bookedSlots[3].memberName}</h5>
                     <h6 className="mb-4 font-medium text-[#c3bd2e] ">
                     Public Relations
                     </h6>

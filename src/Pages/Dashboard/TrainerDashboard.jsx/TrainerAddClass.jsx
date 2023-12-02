@@ -3,6 +3,7 @@ import Title from "../../../Shared/Title";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 const TrainerAddClass = () => {
   
@@ -36,6 +37,9 @@ const TrainerAddClass = () => {
         
   return (
     <div>
+      <Helmet>
+        <title> Fit-Flex-Online|Add-Class </title>
+      </Helmet>
       <Title heading={"Add a class"}></Title>
       <div>
         <form onSubmit={handleAdd}>

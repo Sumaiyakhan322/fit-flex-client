@@ -48,9 +48,9 @@ const AllClass = () => {
           <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200 font-bold">Time Slot:
            <span className="text-[#c3bd2e] ">{classes.timeSlot}</span>
           </p>
-          <Link to={'/trainer'}>
+          <Link to={`/classes/${classes._id}`}>
           <button  className="bg-white text-[#193e51] p-3 rounded-lg text-center  font-bold">
-            Join Now
+           Details
           </button></Link>
           
         </div>

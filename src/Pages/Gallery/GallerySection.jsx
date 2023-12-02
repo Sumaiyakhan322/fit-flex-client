@@ -22,10 +22,10 @@ const TOTAL_PAGES = 5;
         },
       });
     
-      // if (isPending ) return <Loading></Loading>;
+     
       const triggerRef = useRef(null);
       const onGrabData = (currentPage) => {
-          // This would be where you'll call your API
+         
           return new Promise((resolve) => {
           setTimeout(() => {
               const data = images.slice(

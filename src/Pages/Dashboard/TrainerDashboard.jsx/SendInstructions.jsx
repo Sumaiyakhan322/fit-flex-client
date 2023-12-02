@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 emailjs.init("ZYlfDB9H57G6wKORU");
 
 
@@ -53,6 +54,9 @@ const SendInstructions = () => {
     return (
         <div>
                   <div>
+                  <Helmet>
+        <title> Fit-Flex-Online|Trainer-Instructions</title>
+      </Helmet>
                 <div>
             <Title heading={'Send Instructions'}></Title>
                <form onSubmit={handleSubmit}>

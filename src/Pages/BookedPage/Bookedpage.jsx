@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ContextApi } from "../../Providers/ContextProviders";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -35,6 +36,9 @@ const Bookedpage = () => {
     
     return (
        <>
+       <Helmet>
+        <title> Fit-Flex-Online|Booked-page </title>
+      </Helmet>
         <form onSubmit={handleSubmit}>
       <div className="flex gap-4 md:flex-row flex-col">
         {/* Profile name */}

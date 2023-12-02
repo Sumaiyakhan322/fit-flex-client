@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import emailjs from '@emailjs/browser';
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 emailjs.init("ZYlfDB9H57G6wKORU");
 const AppliedTrainer = () => {
   const axiosPublic = useAxiosPublic();
@@ -87,6 +88,9 @@ const AppliedTrainer = () => {
 
   return (
     <div>
+      <Helmet>
+        <title> Fit-Flex-Online|Applied Trainers </title>
+      </Helmet>
       <Title heading={"Applied Trainers"}></Title>
       <div className="overflow-x-auto md:ml-20 ml-0">
         <table className="table ">
