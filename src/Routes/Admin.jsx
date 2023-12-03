@@ -11,10 +11,7 @@ const Admin = ({children}) => {
    
     
     if(loading && isPending){
-        return <> 
-      <div className='min-h-[calc(100vh-52px)] flex  items-center justify-center '>
-           <span className="loading loading-spinner loading-lg text-error"></span>
-        </div></>
+        return <loading></loading>
     }
     if(user && isAdmin){
         console.log('last',user,isAdmin);
