@@ -22,7 +22,7 @@ const useTrainer = () => {
     if(isPending) return <Loading></Loading>
 
   
- if(loading) {
+
   const isTrainerExist= (data?.find(trainer=>trainer.email===user?.email))
 
 
@@ -32,7 +32,7 @@ const useTrainer = () => {
            isTrainer=true
    }
  
- } 
+ 
 
 
 

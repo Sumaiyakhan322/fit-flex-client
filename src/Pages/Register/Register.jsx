@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import { updateProfile } from "firebase/auth";
-
+import '../../Styles/box.css'
 const Register = () => {
     const axiosPublic=useAxiosPublic()
     const {createUser}=useContext(AuthContext)
@@ -65,46 +65,46 @@ const Register = () => {
         <Helmet>
       <title>Fit-Flex-Online| Register</title>
      </Helmet>
-        <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col md:flex-row">
-          <div className="text-center md:text-left md:w-1/2">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-          </div>
-          <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
+        <div className="flex justify-center">
+        <div className="hero-content text-center text-neutral-content md:w-1/2 w-full">
+        
+          <div className="card w-full  shadow-2xl  box">
+          <h2 className='text-[#193e51] my-10 font-bold md:text-4xl text-2xl'>Please Register  </h2>
+            <div>
             <form className="card-body" onSubmit={handleSubmit}>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text text-xl text-[#193e51]">Name</span>
                 </label>
-                <input type="text" name="name" placeholder="Your name" className="input input-bordered" required />
+                <input type="text" name="name" placeholder="Your name" className="input input-bordered text-black" required />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Photo url</span>
+                  <span className="label-text text-xl text-[#193e51]">Photo url</span>
                 </label>
-                <input type="text" name="photo" placeholder="Your Photo url" className="input input-bordered" required />
+                <input type="text" name="photo" placeholder="Your Photo url" className="input input-bordered text-black" required />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text text-xl text-[#193e51]">Email</span>
                 </label>
-                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                <input type="email" name="email" placeholder="email" className="input input-bordered text-black" required />
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text text-xl text-[#193e51]">Password</span>
                 </label>
-                <input type='password' name="password" placeholder="password" className="input input-bordered " required />  
+                <input type='password' name="password" placeholder="password" className="input input-bordered text-black" required />  
                 {error && <p className="text-red-500">{error}</p>}
                 
               </div>
               
               <div className="form-control mt-6 ">
-               <input type="submit" className=' btn btn-primary'  value={'Register'} />
+               <input type="submit" className=' btn bg-gradient-to-r from-[#193e51] to-[#146666]hover:bg-white hover:border hover:border-[#193e51] text-[#fcf540] font-bold'  value={'Register'} />
               </div>
             </form>
-           <p className='text-center my-8'>have already account <Link to='/login'>Log in</Link> </p>
+            </div>
+           <p className='text-black'>have already account <Link to='/login' className=" text-[#c3bd2e] font-bold underline">Log in</Link> </p>
             <SocailLogin></SocailLogin>
           </div>
         </div>

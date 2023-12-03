@@ -69,7 +69,7 @@ const Navbar = () => {
 
       </li>
       <li  className="hover:bg-[#aac7c7] rounded-lg nav">
-      {user && isAdmin &&!isTrainer && (
+      {user && isAdmin && !isTrainer && (
         <NavLink to={"/dashboard/adminHome"}  className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "text-[#c3bd2e]" : ""
       }>

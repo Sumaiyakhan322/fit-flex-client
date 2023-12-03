@@ -10,8 +10,9 @@ import useTrainer from "../Hooks/useTrainer";
 
 const Dashboard = () => {
  
-   const {isAdmin}=useAdmin();
-   const {isTrainer}=useTrainer();
+   const {isAdmin,}=useAdmin();
+   const {isTrainer,}=useTrainer();
+   console.log(isAdmin,isTrainer);
 
 
 

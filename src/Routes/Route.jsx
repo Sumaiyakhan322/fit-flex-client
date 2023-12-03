@@ -108,30 +108,30 @@ import Trainer from "./Trainer";
             //admin paths 
             {
               path:'adminHome',
-              element:<Admin><AdminHome></AdminHome></Admin>
+              element:<AdminHome></AdminHome>
             },{
               path:'subscribers',
-              element:<Admin><AllSubcribers></AllSubcribers></Admin>
+              element:<AllSubcribers></AllSubcribers>
             },{
               path:'appliedTrainer',
-              element:<Admin><AppliedTrainer></AppliedTrainer></Admin>
+              element:<AppliedTrainer></AppliedTrainer>
             },{
               path:'allTrainers',
-              element:<Admin><AllTrainers></AllTrainers></Admin>
+              element:<AllTrainers></AllTrainers>
             },{
               path:'trainerPay/:id',
-              element:<Admin><TrainerPayment></TrainerPayment></Admin>
+              element:<TrainerPayment></TrainerPayment>
             },{
               path:'balance',
-              element:<Admin><AdminBalance></AdminBalance></Admin>
+              element:<AdminBalance></AdminBalance>
             },{
               path:'addNewForum',
-              element:<Admin><AdminForum></AdminForum></Admin>,
+              element:<AdminForum></AdminForum>
             },
             //trainer paths
             {
              path:'trainerHome',
-             element:<Trainer><TrainerHome></TrainerHome></Trainer>
+             element:<TrainerHome></TrainerHome>
             },{
               path:'manageSlots',
               element:<TrainerManageSlots></TrainerManageSlots>

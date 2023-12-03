@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import '../../Styles/box.css'
 
 
 const Login = () => {
@@ -87,7 +88,7 @@ const Login = () => {
               <SocailLogin></SocailLogin>
              
     <p className='text-black'>Do not have any account ? Go to <Link className='text-[#c3bd2e] font-bold underline' to='/register'>Register</Link></p>
-   </form>
+      </form>
        </div>
        </div>
      

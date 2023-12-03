@@ -21,13 +21,15 @@ const useAdmin = () => {
          }
      })
      if(isPending) return <Loading></Loading>
+    
  
-     if (data && data.length > 0 && loading==true) {
+     if (data && data?.length > 0 && user) {
        
         const admin = data[0].email === userEmail;
         if (admin) {
           isAdmin = true;
         }
+        console.log(isAdmin,user);
        
       }
       return { isAdmin,isPending}
