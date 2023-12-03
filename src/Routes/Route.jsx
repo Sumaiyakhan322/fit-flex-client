@@ -32,8 +32,7 @@ import UserDailyActivity from "../Pages/Dashboard/UserDashboard/UserDailyActivit
 import Forums from "../Pages/Forums/Forums";
 import DetailsClass from "../Pages/Classes/DetailsClass";
 import Error from "../Error/Error";
-import Admin from "./Admin";
-import Trainer from "./Trainer";
+
 
   
     const router = createBrowserRouter([
