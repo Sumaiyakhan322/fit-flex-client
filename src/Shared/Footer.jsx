@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div>
            <div>
-            <div className='mt-20 rounded-lg'>
+            <div className='mt-20'>
             <footer className=" text-center bg-[#193e51] lg:text-left text-white rounded-lg">
         
         <div className="mx-auto  max-w-6xl py-10 text-center md:text-left md:px-10 px-4 lg:px-0 ">
