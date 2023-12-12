@@ -12,7 +12,7 @@ const Features = () => {
     <div className="grid lg:grid-cols-3 lg:gap-x-12">
       <div className="mb-12 lg:mb-0">
         <div
-          className="block h-full rounded-lg bg-[#f2f2df]">
+          className="block h-full rounded-lg bg-yellow-100">
           <div className="flex justify-center">
             <div className="-mt-8 inline-block rounded-full bg-primary-100 p-4 text-[#193e51] shadow-md text-3xl">
             
@@ -30,7 +30,7 @@ const Features = () => {
 
       <div className="mb-12 lg:mb-0">
         <div
-          className="block h-full rounded-lg bg-[#f2f2df]">
+          className="block h-full rounded-lg bg-yellow-100">
           <div className="flex justify-center">
             <div className="-mt-8 inline-block rounded-full bg-primary-100 p-4 text-[#193e51] shadow-md text-3xl">
              <SiOpenaigym></SiOpenaigym>
@@ -47,7 +47,7 @@ const Features = () => {
 
       <div className="">
         <div
-          className="block h-full rounded-lg bg-[#f2f2df]">
+          className="block h-full rounded-lg bg-yellow-100">
           <div className="flex justify-center">
             <div className="-mt-8 inline-block rounded-full bg-primary-100 p-4 text-[#193e51] shadow-md text-3xl">
              <MdSportsGymnastics></MdSportsGymnastics>
@@ -69,7 +69,7 @@ const Features = () => {
     <div className="grid lg:grid-cols-3 lg:gap-x-12">
       <div className="mb-12 lg:mb-0">
         <div
-          className="block h-full rounded-lg bg-[#f2f2df]">
+          className="block h-full rounded-lg bg-yellow-100">
           <div className="flex justify-center">
             <div className="-mt-8 inline-block rounded-full bg-primary-100 p-4 text-[#193e51] shadow-md">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
@@ -90,7 +90,7 @@ const Features = () => {
 
       <div className="mb-12 lg:mb-0">
         <div
-          className="block h-full rounded-lg bg-[#f2f2df]">
+          className="block h-full rounded-lg bg-yellow-100">
           <div className="flex justify-center">
             <div className="-mt-8 inline-block rounded-full bg-primary-100 p-4 text-[#193e51] shadow-md">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
@@ -111,7 +111,7 @@ const Features = () => {
 
       <div className="">
         <div
-          className="block h-full rounded-lg bg-[#f2f2df]">
+          className="block h-full rounded-lg bg-yellow-100">
           <div className="flex justify-center">
             <div className="-mt-8 inline-block rounded-full bg-primary-100 p-4 text-[#193e51] shadow-md">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"

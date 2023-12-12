@@ -30,7 +30,7 @@ const Testimonial = () => {
              data-aos-offset="300"
              data-aos-easing="ease-in-sine">
                 <div
-                  className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+                  className="block rounded-lg bg-yellow-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
                   <div className="relative overflow-hidden bg-cover bg-no-repeat">
                     <img src={testimonial1} className="w-full h-[300px] rounded-t-lg" />
                     <a href="#!">
@@ -91,7 +91,7 @@ const Testimonial = () => {
              data-aos-offset="300"
              data-aos-easing="ease-in-sine">
                 <div
-                  className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+                  className="block rounded-lg bg-yellow-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
                   <div className="relative overflow-hidden bg-cover bg-no-repeat">
                     <img src={testimonial2} className="w-full h-[300px] rounded-t-lg" />
                     <a href="#!">
@@ -158,7 +158,7 @@ const Testimonial = () => {
              data-aos-offset="300"
              data-aos-easing="ease-in-sine">
                 <div
-                  className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+                  className="block rounded-lg bg-yellow-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
                   <div className="relative overflow-hidden bg-cover bg-no-repeat">
                     <img src={testimonial3} className="w-full h-[300px] rounded-t-lg" />
                     <a href="#!">

@@ -66,9 +66,9 @@ const TrainerManageSlots = () => {
       <div className="px-6 py-12 text-center md:px-12 lg:text-left ">
         <div className="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl xl:px-32">
           <div className="grid items-center lg:grid-cols-2">
-            <div className="mb-12 md:mt-12 lg:mt-0 lg:mb-0">
-            <div className="block rounded-lg bg-[hsla(0,0%,100%,0)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#1466548a] dark:shadow-black/20 md:px-12 lg:-mr-14 backdrop-blur-[30px] ">
-                <h1 className="mt-2 mb-16 text-4xl font-bold tracking-tight md:text-5xl xl:text-6xl text-white">
+            <div className="mb-12 md:mt-12 lg:mt-0 lg:mb-0 bg-[#193e51] rounded">
+            <div className="block rounded-lg  md:px-12 lg:-mr-14">
+                <h1 className=" mt-16 text-4xl font-bold tracking-tight md:text-5xl xl:text-6xl text-white">
                   My all slots <br />
                 </h1>
                 <div className="py-6 font-bold flex flex-col text-white ">
@@ -98,12 +98,12 @@ const TrainerManageSlots = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {allBookedSlots?.map((slot) => (
               <div key={slot._id}>
-                <div className="card bg-[hsla(0,0%,100%,0)] px-2 py-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#1466548a] dark:shadow-black/20 text-primary-content backdrop-blur-[30px]">
+                <div className="card bg-gradient-to-r from-[#a9a9a9] to-[#222e33] text-primary-content backdrop-blur-[30px]">
                   <div className="card-body">
-                    <h2 className="card-title text-[#193e51] font-bold text-xl">My Slot Time:<span className="text-[#eee95c]">{slot.slotTime}</span></h2>
-                    <h2 className="card-title text-[#193e51] font-bold text-xl">Member Email:<span className="text-[#eee95c]">{slot.memberEmail}</span></h2>
-                    <h2 className="card-title text-[#193e51] font-bold text-xl">Member Name:<span className="text-[#eee95c]">{slot.memberName}</span></h2>
-                    <h2 className="card-title text-[#193e51] font-bold text-xl">Selected Package:<span className="text-[#eee95c]">{slot.packageName}</span>
+                    <h2 className="card-title text-black font-bold text-xl">My Slot Time:<span className="">{slot.slotTime}</span></h2>
+                    <h2 className="card-title text-black font-bold text-xl">Member Email:<span className="">{slot.memberEmail}</span></h2>
+                    <h2 className="card-title text-black font-bold text-xl">Member Name:<span className="">{slot.memberName}</span></h2>
+                    <h2 className="card-title text-black font-bold text-xl">Selected Package:<span className="">{slot.packageName}</span>
 </h2>
                    
                     <div className="card-actions justify-end">

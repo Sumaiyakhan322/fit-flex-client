@@ -23,7 +23,7 @@ const UserClass = () => {
             <div className="my-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 {
     data?.slice(0,9)?.map(classes=>(
-        <div key={classes._id} className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#193e51d2]">
+        <div key={classes._id} className="block rounded-lg bg-yellow-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#193e51d2]">
         <div
           className="relative overflow-hidden bg-cover bg-no-repeat h-60"
           data-te-ripple-init=""
@@ -49,7 +49,7 @@ const UserClass = () => {
            <span className="text-[#c3bd2e] ">{classes.timeSlot}</span>
           </p>
           <Link to={'/trainer'}>
-          <button  className="bg-white text-[#193e51] p-3 rounded-lg text-center  font-bold">
+          <button  className="bg-[#193e51]  text-[#c3bd2e] p-3 rounded-lg text-center  font-bold">
             Join Now
           </button></Link>
           

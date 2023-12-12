@@ -53,13 +53,13 @@ const JoinNow = () => {
       <div className="container my-24 mx-auto md:px-6">
         {/* Section: Design Block */}
         <section className="mb-32">
-          <style
+          {/* <style
             dangerouslySetInnerHTML={{
               __html:
                 "\n      .background-radial-gradient {\n        background-color: hsl(218, 41%, 15%);\n        background-image: radial-gradient(650px circle at 0% 0%,\n            hsl(218, 41%, 35%) 15%,\n            hsl(218, 41%, 30%) 35%,\n            hsl(218, 41%, 20%) 75%,\n            hsl(218, 41%, 19%) 80%,\n            transparent 100%),\n          radial-gradient(1250px circle at 100% 100%,\n            hsl(218, 41%, 45%) 15%,\n            hsl(218, 41%, 30%) 35%,\n            hsl(218, 41%, 20%) 75%,\n            hsl(218, 41%, 19%) 80%,\n            transparent 100%);\n      }\n    ",
             }}
-          />
-          <div className="background-radial-gradient text-center text-white lg:h-[400px] h-[300px] lg:pt-[80px] pt-[55px]">
+          /> */}
+          <div className="background-radial-gradient text-center text-white lg:h-[400px] h-[300px] lg:pt-[80px] pt-[55px] bg-[#193e51]">
             <h2 className="mb-12 text-center text-3xl font-bold">
               Trainer Name: {pricingDetails.name}
             </h2>
@@ -74,7 +74,7 @@ const JoinNow = () => {
           >
             {data.map((items) => (
               <div key={items._id} className="p-0 py-12">
-                <div className="block h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-yellow-100">
+                <div className="block h-full rounded-lg bg-yellow-100">
                   <div className="border-b-2 border-neutral-100 border-opacity-100 p-6 text-center dark:border-opacity-10">
                     <p className="mb-4 text-sm uppercase">
                       <strong>{items.name}</strong>

@@ -34,7 +34,7 @@ const Team = () => {
            
             <div className="mb-24 md:mb-0" key={trainers._id}>
         <div
-          className="block h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#f2f2df]  ">
+          className="block h-full rounded-lg bg-yellow-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#f2f2df]  ">
           <div className="flex justify-center">
             <div className="">
               <img src={trainers.image}
