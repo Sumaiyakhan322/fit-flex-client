@@ -13,7 +13,7 @@ export const AuthContext=createContext(null)
 
 const AuthProvider = ({children}) => {
    
-    // const axiosPublic=useAxiosPublic();
+    
    
 
     const [user,setUser]=useState(null);

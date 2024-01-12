@@ -2,17 +2,19 @@ import { useContext, useState } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { AuthContext } from "../../Providers/AuthProvider";
 import SocailLogin from "../../Shared/SocailLogin";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import { updateProfile } from "firebase/auth";
-import '../../Styles/box.css'
+import '../../Styles/box.css';
 const Register = () => {
     const axiosPublic=useAxiosPublic()
     const {createUser}=useContext(AuthContext)
     const [error, setError] = useState("");
     
+    const location=useLocation()
     const navigate=useNavigate()
+   console.log(location.state);
    
     const handleSubmit=e=>{
         e.preventDefault();
@@ -34,10 +36,9 @@ const Register = () => {
               displayName: `${name}`,
               photoURL: `${photo}`,
             })
-              .then()
-              .catch()
+             
               const userInfo={name,email,role:'member'}
-              console.log(userInfo);
+              
               axiosPublic.post('/users',userInfo)
             .then(res=>{
               if(res.data.insertedId){
@@ -50,7 +51,7 @@ const Register = () => {
                 });
                 
             e.target.reset();
-            navigate("/");
+            navigate('/')
               }
             })
           

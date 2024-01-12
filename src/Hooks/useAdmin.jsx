@@ -6,12 +6,13 @@ import Loading from "../Loading";
 
 
 
+
 const useAdmin = () => {
     const axiosPublic=useAxiosPublic();
     let isAdmin=false
     const {user}=useContext(AuthContext)
      const userEmail=user?.email
- 
+   
      const {data,isPending} =useQuery({
          queryKey:[user?.email,'isAdmin'],
         //  enabled:!loading,

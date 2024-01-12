@@ -44,7 +44,8 @@ const AdminBalance = () => {
     return sum + payments;
   }, 0);
   const totalPayment = (AdminPayments / 1000).toFixed(2);
-  const initial = 100000;
+  const initial = 10000000;
+  const initialValue=initial/1000;
   const remaining = ((initial - AdminPayments) / 1000).toFixed(2);
 
   return (
@@ -73,7 +74,7 @@ const AdminBalance = () => {
             </svg>
           </div>
           <div className="stat-title">Initial Bank Balance:</div>
-          <div className="stat-value">100K</div>
+          <div className="stat-value">{initialValue}k</div>
         </div>
 
         <div className="stat ">

@@ -6,6 +6,7 @@ import Footer from "../Shared/Footer";
 const Main = () => {
     
     const location=useLocation()
+    console.log(location);
     const noHeaderFooterLogin=location.pathname.includes('login')
     const noHeaderFooterRegister=location.pathname.includes('register')
     return (

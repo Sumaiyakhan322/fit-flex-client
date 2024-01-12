@@ -6,8 +6,6 @@ import Loading from "../Loading";
 const Private = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
-  console.log(user,loading);
-
   if (loading) {
     return (
       <>
@@ -18,7 +16,9 @@ const Private = ({ children }) => {
   if (user) {
     return children;
   }
-  return <Navigate to="/login" state={location.pathname} replace={true}></Navigate>;
+  return (
+    <Navigate to="/login" state={location.pathname} replace={true}></Navigate>
+  );
 };
 
 export default Private;

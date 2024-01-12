@@ -14,6 +14,7 @@ const Login = () => {
   
     const location=useLocation()
     const navigate=useNavigate()
+   console.log(location.state);
     const [error,setError]=useState('')
     const handleLogIn=(e)=>{
         e.preventDefault();
