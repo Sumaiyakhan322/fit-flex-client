@@ -8,7 +8,6 @@ import Testimonial from "./Testimonial";
 import Newsletter from "./Newsletter";
 import Team from "./Team";
 
-
 const Home = () => {
   return (
     <div>
@@ -23,10 +22,6 @@ const Home = () => {
       <Blog></Blog>
       <Newsletter></Newsletter>
       <Team></Team>
-     
-
-      
-      
     </div>
   );
 };

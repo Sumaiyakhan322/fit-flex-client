@@ -3,18 +3,17 @@ import Title from "../../Shared/Title";
 import GallerySection from "./GallerySection";
 import PageTitle from "./PageTitle";
 
-
 const Gallery = () => {
-    return (
-        <div>
-            <Helmet>
+  return (
+    <div>
+      <Helmet>
         <title> Fit-Flex-Online|Gallery </title>
       </Helmet>
-           <PageTitle></PageTitle> 
-           <Title heading={'Our Gallery '}></Title>
-           <GallerySection></GallerySection>
-        </div>
-    );
+      <PageTitle></PageTitle>
+      <Title heading={"Our Gallery "}></Title>
+      <GallerySection></GallerySection>
+    </div>
+  );
 };
 
 export default Gallery;

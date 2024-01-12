@@ -6,35 +6,41 @@ import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { Helmet } from "react-helmet-async";
 
 const TrainerAddClass = () => {
-  
-    const {user}=useContext(AuthContext)
-    const axiosPublic=useAxiosPublic()
-  
-    const handleAdd=e=>{
-        e.preventDefault();
-      
-        const trainerName=user?.displayName;
-        const className=e.target.className.value ;
-        const image=e.target.img.value;
-        const classDescription=e.target.des.value ;
-        const day=e.target.day.value ;
-        const timeSlot=e.target.timeSlot.value ;
-        const classInfo={trainerName,classDescription,className,image,day,timeSlot}
-        
-        axiosPublic.post('/classess',classInfo).then((res) => {
-            if (res.data.insertedId) {
-              Swal.fire({
-                position: "center",
-                icon: "success",
-                title: `Successfully add a class `,
-                showConfirmButton: false,
-                timer: 1500,
-              });
-              e.target.reset()
-            }
-          });
- }
-        
+  const { user } = useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
+
+  const handleAdd = (e) => {
+    e.preventDefault();
+
+    const trainerName = user?.displayName;
+    const className = e.target.className.value;
+    const image = e.target.img.value;
+    const classDescription = e.target.des.value;
+    const day = e.target.day.value;
+    const timeSlot = e.target.timeSlot.value;
+    const classInfo = {
+      trainerName,
+      classDescription,
+      className,
+      image,
+      day,
+      timeSlot,
+    };
+
+    axiosPublic.post("/classess", classInfo).then((res) => {
+      if (res.data.insertedId) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: `Successfully add a class `,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        e.target.reset();
+      }
+    });
+  };
+
   return (
     <div>
       <Helmet>
@@ -47,7 +53,7 @@ const TrainerAddClass = () => {
           <div className="flex flex-col md:flex-row gap-10 my-10">
             <div className="relative h-12 w-full flex items-center justify-center gap-2">
               <label htmlFor="email" className="text-[#194a63] font-bold">
-               Trainer Name:
+                Trainer Name:
               </label>
               <input
                 className="border border-[#c3bd2e] input input-bordered w-full"
@@ -55,12 +61,11 @@ const TrainerAddClass = () => {
                 name="name"
                 readOnly
                 value={user?.displayName}
-               
               />
             </div>
             <div className="relative h-12  w-full flex items-center justify-center gap-2">
               <label htmlFor="title" className="text-[#194a63] font-bold">
-               Class Name:
+                Class Name:
               </label>
               <input
                 className="border border-[#c3bd2e] input input-bordered w-full"
@@ -76,7 +81,7 @@ const TrainerAddClass = () => {
           <div className="flex flex-col md:flex-row gap-10 my-10">
             <div className="relative h-12 w-full flex items-center justify-center gap-2">
               <label htmlFor="deadline" className="text-[#194a63] font-bold">
-               Image
+                Image
               </label>
               <input
                 className="border border-[#c3bd2e] input input-bordered w-full"
@@ -94,11 +99,12 @@ const TrainerAddClass = () => {
               <select
                 className="select select-bordered border-[#c3bd2e] input  w-full"
                 id="timeSlot"
-                name="timeSlot" defaultValue={'default'}
+                name="timeSlot"
+                defaultValue={"default"}
               >
-                 <option value={"default"} disabled>
-                Select Time Slot
-              </option>
+                <option value={"default"} disabled>
+                  Select Time Slot
+                </option>
                 <option>8am-9am</option>
                 <option>10am-11am</option>
                 <option>11am-12am</option>
@@ -111,19 +117,20 @@ const TrainerAddClass = () => {
           </div>
           {/* minimum and maximum */}
           <div className="flex flex-col md:flex-row gap-10 my-10">
-          <div className="relative h-12 w-full flex items-center justify-center gap-2">
+            <div className="relative h-12 w-full flex items-center justify-center gap-2">
               <label htmlFor="day" className="text-[#194a63] font-bold">
                 Day:
               </label>
               <select
                 className="select select-bordered border-[#c3bd2e] input  w-full"
                 id="day"
-                name="day" defaultValue={'default'}
+                name="day"
+                defaultValue={"default"}
               >
                 <option value={"default"} disabled>
-                Select Day
-              </option>
-                
+                  Select Day
+                </option>
+
                 <option>Saturday</option>
                 <option>Sunday</option>
                 <option>Monday</option>
@@ -133,9 +140,7 @@ const TrainerAddClass = () => {
                 <option> Friday</option>
               </select>
             </div>
-          
           </div>
-          
 
           <div className="relative h-32 w-full  flex items-center justify-center gap-2">
             <label htmlFor="des" className="text-[#194a63] font-bold">

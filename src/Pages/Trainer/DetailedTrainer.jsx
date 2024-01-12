@@ -2,27 +2,22 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../../Loading";
 import { useParams } from "react-router-dom";
-import {  useState } from "react";
-
-
-
+import { useState } from "react";
 
 const DetailedTrainer = () => {
   const axiosPublic = useAxiosPublic();
   const [details, setDetails] = useState({});
   const { id } = useParams();
- 
-  
 
   const { data, isPending } = useQuery({
     queryKey: ["trainersIndividual"],
     queryFn: async () => {
       const res = await axiosPublic.get(`/trainers/${id}`);
-      
+
       setDetails(res.data);
-   },
+    },
   });
- 
+
   if (isPending) return <Loading></Loading>;
 
   const {
@@ -34,9 +29,7 @@ const DetailedTrainer = () => {
     skills,
     selectedCheckboxes,
     weeks,
-   } = details;
-
-
+  } = details;
 
   return (
     <div>
@@ -80,11 +73,7 @@ const DetailedTrainer = () => {
                   {item}
                 </h1>
               ))}
-                
-             
             </div>
-
-            
           </div>
         </div>
       </div>

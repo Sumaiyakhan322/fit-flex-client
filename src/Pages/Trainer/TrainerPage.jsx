@@ -31,7 +31,6 @@ const TrainerPage = () => {
           key={items._id}
           className="my-14 card flex md:flex-row flex-col card-side bg-[#193e51] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[#335c70] "
         >
-          {/* <figure className="w-3/6 h-60 bg-center"><img src={items.image} alt="Movie"/></figure> */}
           <div
             style={{ backgroundImage: `url(${items.image})` }}
             className="w-3/6   bg-cover bg-no-repeat "
@@ -49,7 +48,12 @@ const TrainerPage = () => {
             </h2>
             <div className="text-white  font-bold flex flex-col">
               {items.selectedCheckboxes.map((item, index) => (
-                <TimeStamp item={item} id={items._id} trainerDescritption={items}  key={index}></TimeStamp>
+                <TimeStamp
+                  item={item}
+                  id={items._id}
+                  trainerDescritption={items}
+                  key={index}
+                ></TimeStamp>
               ))}
             </div>
             <ul className="flex list-inside text-3xl mt-3">

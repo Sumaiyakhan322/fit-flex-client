@@ -4,16 +4,13 @@ import Title from "../../../Shared/Title";
 import Loading from "../../../Loading";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 emailjs.init("ZYlfDB9H57G6wKORU");
 const TrainerManageSlots = () => {
   const axiosPublic = useAxiosPublic();
   const { user } = useContext(AuthContext);
-
-
-  
 
   const { data, isPending } = useQuery({
     queryKey: ["trainers"],
@@ -36,29 +33,26 @@ const TrainerManageSlots = () => {
   const allBookedSlots = bookedSlots?.filter(
     (book) => book.trainerEmail === user?.email
   );
-   const handleReject=async(item)=>{
+  const handleReject = async (item) => {
     console.log(item);
     const templateParams = {
-        to_name: `${item?.memberEmail}`,
-        from_name:`${item?.trainerEmail}`,
-      };
+      to_name: `${item?.memberEmail}`,
+      from_name: `${item?.trainerEmail}`,
+    };
 
-      await emailjs.send("service_5zq1qlr", "template_xdwfelj", templateParams);
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: `Successfully sent message to  ${item.memberName}  via emailjs`,
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    
-  
-
-   }
+    await emailjs.send("service_5zq1qlr", "template_xdwfelj", templateParams);
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: `Successfully sent message to  ${item.memberName}  via emailjs`,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
 
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title> Fit-Flex-Online|Manage Slots </title>
       </Helmet>
       <Title heading={"Manage Slots"}></Title>
@@ -67,7 +61,7 @@ const TrainerManageSlots = () => {
         <div className="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl xl:px-32">
           <div className="grid items-center lg:grid-cols-2">
             <div className="mb-12 md:mt-12 lg:mt-0 lg:mb-0 bg-[#193e51] rounded">
-            <div className="block rounded-lg  md:px-12 lg:-mr-14">
+              <div className="block rounded-lg  md:px-12 lg:-mr-14">
                 <h1 className=" mt-16 text-4xl font-bold tracking-tight md:text-5xl xl:text-6xl text-white">
                   My all slots <br />
                 </h1>
@@ -100,19 +94,28 @@ const TrainerManageSlots = () => {
               <div key={slot._id}>
                 <div className="card bg-gradient-to-r from-[#a9a9a9] to-[#222e33] text-primary-content backdrop-blur-[30px]">
                   <div className="card-body">
-                    <h2 className="card-title text-black font-bold text-xl">My Slot Time:<span className="">{slot.slotTime}</span></h2>
-                    <h2 className="card-title text-black font-bold text-xl">Member Email:<span className="">{slot.memberEmail}</span></h2>
-                    <h2 className="card-title text-black font-bold text-xl">Member Name:<span className="">{slot.memberName}</span></h2>
-                    <h2 className="card-title text-black font-bold text-xl">Selected Package:<span className="">{slot.packageName}</span>
-</h2>
-                   
+                    <h2 className="card-title text-black font-bold text-xl">
+                      My Slot Time:<span className="">{slot.slotTime}</span>
+                    </h2>
+                    <h2 className="card-title text-black font-bold text-xl">
+                      Member Email:<span className="">{slot.memberEmail}</span>
+                    </h2>
+                    <h2 className="card-title text-black font-bold text-xl">
+                      Member Name:<span className="">{slot.memberName}</span>
+                    </h2>
+                    <h2 className="card-title text-black font-bold text-xl">
+                      Selected Package:
+                      <span className="">{slot.packageName}</span>
+                    </h2>
+
                     <div className="card-actions justify-end">
-                    <button onClick={()=>handleReject(slot)}
-        type="submit"
-        className="block mt-10 rounded text-[#fcf540] bg-gradient-to-r from-[#193e51] to-[#146666]  px-7 pb-2.5 pt-3 text-sm font-medium uppercase  mx-auto"
-      >
-      Reject 
-      </button>
+                      <button
+                        onClick={() => handleReject(slot)}
+                        type="submit"
+                        className="block mt-10 rounded text-[#fcf540] bg-gradient-to-r from-[#193e51] to-[#146666]  px-7 pb-2.5 pt-3 text-sm font-medium uppercase  mx-auto"
+                      >
+                        Reject
+                      </button>
                     </div>
                   </div>
                 </div>

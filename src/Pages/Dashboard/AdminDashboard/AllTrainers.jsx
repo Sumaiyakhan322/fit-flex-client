@@ -23,7 +23,7 @@ const AllTrainers = () => {
 
   return (
     <div className="w-full">
-       <Helmet>
+      <Helmet>
         <title> Fit-Flex-Online|All Trainers </title>
       </Helmet>
       <Title heading={"All Trainers"}></Title>
@@ -58,7 +58,7 @@ const AllTrainers = () => {
                     const daysDifference =
                       timeDifference / (1000 * 60 * 60 * 24);
 
-                    if (daysDifference < 30 ) {
+                    if (daysDifference < 30) {
                       return (
                         <div
                           className="tooltip"
@@ -72,10 +72,7 @@ const AllTrainers = () => {
                           </button>
                         </div>
                       );
-                    } 
-                    
-                    
-                    else {
+                    } else {
                       return (
                         <Link to={`/dashboard/trainerPay/${item._id}`}>
                           <button className="rounded hover:bg-[#4b819c] hover:text-white p-3  text-sm font-medium uppercase bg-[#326a86] text-[#e2df82] ">

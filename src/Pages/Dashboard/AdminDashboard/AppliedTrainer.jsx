@@ -4,15 +4,15 @@ import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Loading from "../../../Loading";
 import { FaRegEye } from "react-icons/fa";
 import Swal from "sweetalert2";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 emailjs.init("ZYlfDB9H57G6wKORU");
 const AppliedTrainer = () => {
   const axiosPublic = useAxiosPublic();
-  const {user}=useContext(AuthContext)
-  const { data, isPending,refetch } = useQuery({
+  const { user } = useContext(AuthContext);
+  const { data, isPending, refetch } = useQuery({
     queryKey: ["trainers"],
     queryFn: async () => {
       const res = await axiosPublic.get("/trainers");
@@ -30,12 +30,11 @@ const AppliedTrainer = () => {
         cancelButton: "btn btn-danger",
       },
       buttonsStyling: true,
-
     });
-  
+
     try {
       const result = await swalWithBootstrapButtons.fire({
-        width:'40rem',
+        width: "40rem",
         title: `Trainer email:${item.email}`,
         text: `Trainer Name:${item.name}`,
         icon: "question",
@@ -48,16 +47,27 @@ const AppliedTrainer = () => {
          `,
         showCancelButton: true,
         confirmButtonText: "Confirm Trainer",
-       
+
         cancelButtonText: "Reject Trainer",
         reverseButtons: true,
       });
-  
+
       if (result.isConfirmed) {
-        const beTrainers = { role: "trainer",date:new Date(),payment:'pending' };
-        const updatedTrainers = await axiosPublic.patch(`/trainers/beTrainers/${item._id}`, beTrainers);
-  
-        if (updatedTrainers && updatedTrainers.data && updatedTrainers.data.modifiedCount > 0) {
+        const beTrainers = {
+          role: "trainer",
+          date: new Date(),
+          payment: "pending",
+        };
+        const updatedTrainers = await axiosPublic.patch(
+          `/trainers/beTrainers/${item._id}`,
+          beTrainers
+        );
+
+        if (
+          updatedTrainers &&
+          updatedTrainers.data &&
+          updatedTrainers.data.modifiedCount > 0
+        ) {
           swalWithBootstrapButtons.fire({
             title: `Confirm the ${item.name}`,
             text: "Trainer Added ",
@@ -71,18 +81,20 @@ const AppliedTrainer = () => {
           text: `A Message will be sent on ${item.email} via emailjs`,
           icon: "warning",
         });
-  
+
         const templateParams = {
           to_name: `${item.email}`,
           from_name: `${user?.email}`,
-          // Add any other parameters you want to include in your email
         };
-  
-        await emailjs.send("service_5zq1qlr", "template_xdwfelj", templateParams);
+
+        await emailjs.send(
+          "service_5zq1qlr",
+          "template_xdwfelj",
+          templateParams
+        );
       }
     } catch (error) {
       console.error("Error in handleConfirm:", error);
-      // Handle the error as needed
     }
   };
 
@@ -104,8 +116,6 @@ const AppliedTrainer = () => {
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-
             {appliedTrainers?.map((item, index) => (
               <tr key={item._id}>
                 <th>{index + 1}</th>

@@ -55,7 +55,7 @@ const BeATrainer = () => {
     const image = event.target.image.value;
     const yearsOfExperience = event.target.year.value;
     const experience = event.target.des.value;
-    const expectedPayment=event.target.price.value;
+    const expectedPayment = event.target.price.value;
     const trainerInfo = {
       name,
       age,
@@ -69,7 +69,7 @@ const BeATrainer = () => {
       expectedPayment,
       role: "member",
     };
-    
+
     //post on db
     axiosPublic.post("/trainers", trainerInfo).then((res) => {
       if (res.data.insertedId) {
@@ -80,7 +80,7 @@ const BeATrainer = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        event.target.reset()
+        event.target.reset();
       }
     });
   };
@@ -354,32 +354,30 @@ const BeATrainer = () => {
       </div>
       {/*expreimence */}
       <div className="flex gap-4 md:flex-row flex-col">
-      <div className="relative h-32 w-full  items-center  flex md:flex-row flex-col  gap-2 ">
-        <label className="label">
-          <span className="text-[#194a63] font-bold">
-            Years of Experience:{" "}
-          </span>
-        </label>
-        <input
-          type="number"
-          placeholder="Years of Experience:"
-          className="input input-bordered md:w-1/2  w-full border border-[#c3bd2e]"
-          name="year"
-        />
-      </div>
-      <div className="relative h-32 w-full  items-center  flex md:flex-row flex-col  gap-2 ">
-        <label className="label">
-          <span className="text-[#194a63] font-bold">
-            Expected Payment:{" "}
-          </span>
-        </label>
-        <input
-          type="text"
-          placeholder="Payment:"
-          className="input input-bordered md:w-1/2  w-full border border-[#c3bd2e]"
-          name="price"
-        />
-      </div>
+        <div className="relative h-32 w-full  items-center  flex md:flex-row flex-col  gap-2 ">
+          <label className="label">
+            <span className="text-[#194a63] font-bold">
+              Years of Experience:{" "}
+            </span>
+          </label>
+          <input
+            type="number"
+            placeholder="Years of Experience:"
+            className="input input-bordered md:w-1/2  w-full border border-[#c3bd2e]"
+            name="year"
+          />
+        </div>
+        <div className="relative h-32 w-full  items-center  flex md:flex-row flex-col  gap-2 ">
+          <label className="label">
+            <span className="text-[#194a63] font-bold">Expected Payment: </span>
+          </label>
+          <input
+            type="text"
+            placeholder="Payment:"
+            className="input input-bordered md:w-1/2  w-full border border-[#c3bd2e]"
+            name="price"
+          />
+        </div>
       </div>
       <div className="relative h-32 w-full  flex md:flex-row flex-col items-center justify-center gap-2">
         <label htmlFor="des" className="text-[#194a63] font-bold">

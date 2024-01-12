@@ -16,18 +16,16 @@ const Blog = () => {
   const [showFullDescription, setShowFullDescription] = useState(
     Array(data?.length).fill(false)
   );
-  // console.log(Array(data?.length).fill(false));
 
   const handleReadMore = (index) => {
     const newShowFullDescription = [...showFullDescription];
-    // console.log(newShowFullDescription);
     newShowFullDescription[index] = !newShowFullDescription[index];
     setShowFullDescription(newShowFullDescription);
   };
   return (
     <>
       <div>
-        <Title heading={'Our blog'}></Title>
+        <Title heading={"Our blog"}></Title>
         {data?.map((items, index) => (
           <div key={items._id} className="mb-6 flex flex-wrap items-center">
             <div className="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
