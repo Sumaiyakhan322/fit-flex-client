@@ -35,14 +35,14 @@ const JoinNow = () => {
       memberEmail: user?.email,
       memberName: user?.displayName,
     };
-    //post on db
+
     axiosPublic.post("/booked", bookedPageInfo).then((res) => {
       if (res.data.insertedId) {
         navigate(`/bookedPage`);
         setBookings(bookedPageInfo);
       }
     });
-    console.log(bookedPageInfo);
+  
   };
 
   return (
